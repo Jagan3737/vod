@@ -21,6 +21,7 @@ def read_video(video_file):
 #     with open(video_file, 'rb') as f:
 #         video_bytes = f.read()
 #     st.video(video_bytes)
+    print(video_file)
     video = open(video_file, 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
