@@ -14,7 +14,7 @@ title = st.text_input('Enter things that need to be detected', '')
 st.write(title)
 
 # Set page title
-st.set_page_config(page_title="Video Player")
+# st.set_page_config(page_title="Video Player")
 
 # Define a function to read and display videos
 def read_video(video_file):
