@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from io import StringIO
+from PIL import Image
 # x = st.slider("Select a value")
 # st.write(x, "squared is", x * x)
 
@@ -28,6 +29,12 @@ if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file)
     st.write(dataframe)
+    
+
+
+image = Image.open(string_data)
+
+st.image(image, caption='Sunrise by the mountains')
 
 
     
