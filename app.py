@@ -1,5 +1,4 @@
 import streamlit as st
-import cv2
 # x = st.slider("Select a value")
 # st.write(x, "squared is", x * x)
 
