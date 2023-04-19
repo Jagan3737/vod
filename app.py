@@ -18,6 +18,7 @@ tfile = tempfile.NamedTemporaryFile(delete=False)
 tfile.write(f.read())
 vf = cv.VideoCapture(tfile.name)
 
+
 # uploaded_file = st.file_uploader("Choose a file")
 # if uploaded_file is not None:
 #     # To read file as bytes:
