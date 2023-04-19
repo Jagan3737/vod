@@ -40,7 +40,7 @@ for uploaded_file in uploaded_files:
     
     image = Image.open('sunrise.jpg')
 
-    st.image(image, caption='Sunrise by the mountains'
+    st.image(image, caption='Sunrise by the mountains')
              
              
 
