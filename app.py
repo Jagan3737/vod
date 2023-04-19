@@ -4,6 +4,6 @@ import streamlit as st
 
 st.title('Video Object Detection')
 
-title = st.text_input('Movie title', 'Life of Brian')
+title = st.text_input('Enter things that need to be detected', '')
 st.write('The current movie title is', title)
 
