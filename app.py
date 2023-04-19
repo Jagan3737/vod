@@ -3,6 +3,7 @@ import pandas as pd
 from io import StringIO
 from PIL import Image
 import tempfile
+import io
 # import cv2 as cv
 # x = st.slider("Select a value")
 # st.write(x, "squared is", x * x)
@@ -12,36 +13,25 @@ st.title('Video Object Detection')
 title = st.text_input('Enter things that need to be detected', '')
 st.write(title)
 
+# Set page title
+st.set_page_config(page_title="Video Player")
 
-# uploaded_file = st.file_uploader("Choose a file")
-# if uploaded_file is not None:
-#     # To read file as bytes:
-#     bytes_data = uploaded_file.getvalue()
-#     st.write(bytes_data)
+# Define a function to read and display videos
+def read_video(video_file):
+    with open(video_file, 'rb') as f:
+        video_bytes = f.read()
+    st.video(video_bytes)
 
-#     # To convert to a string based IO:
-#     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-#     st.write(stringio)
+# Create a file uploader for videos
+video_file = st.file_uploader("Upload a video", type=["mp4", "avi"])
 
-#     # To read file as string:
-#     string_data = stringio.read()
-#     st.write(string_data)
-
-#     # Can be used wherever a "file-like" object is accepted:
-#     dataframe = pd.read_csv(uploaded_file)
-#     st.write(dataframe)
-    
+# Display the uploaded video
+if video_file is not None:
+    read_video(video_file)
 
 
-# uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-# for uploaded_file in uploaded_files:
-#     bytes_data = uploaded_file.read()
-#     st.write("filename:", uploaded_file.name)
-#     st.write(bytes_data)
-    
-#     image = Image.open('sunrise.jpg')
 
-#     st.image(image, caption='Sunrise by the mountains')
+
              
              
 
