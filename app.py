@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from io import StringIO
 from PIL import Image
+import cv2 as cv
 import tempfile
 # import cv2 as cv
 # x = st.slider("Select a value")
