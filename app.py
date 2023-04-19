@@ -16,7 +16,6 @@ show_file = st.empty()
 
 if not file:
     show_file.info("Please upload a file of type: " + ", ".join(["csv", "png", "jpg"]))
-    return
 
 content = file.getvalue()
 
