@@ -11,23 +11,22 @@ import streamlit as st
 import pandas as pd
 from io import StringIO
 
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    st.write(bytes_data)
+file = st.file_uploader("Upload file", type=["csv", "png", "jpg"])
+show_file = st.empty()
 
-    # To convert to a string based IO:
-    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    st.write(stringio)
+if not file:
+    show_file.info("Please upload a file of type: " + ", ".join(["csv", "png", "jpg"]))
+    return
 
-    # To read file as string:
-    string_data = stringio.read()
-    st.write(string_data)
+content = file.getvalue()
 
-    # Can be used wherever a "file-like" object is accepted:
-    dataframe = pd.read_csv(uploaded_file)
-    st.write(dataframe)
+if isinstance(file, BytesIO):
+    show_file.image(file)
+else:
+    data = pd.read_csv(file)
+    st.dataframe(data.head(10))
+file.close()
+    
 
 
 
