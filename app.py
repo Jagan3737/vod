@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from io import StringIO
 from PIL import Image
+import tempfile
 # x = st.slider("Select a value")
 # st.write(x, "squared is", x * x)
 
