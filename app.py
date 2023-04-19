@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from io import StringIO
 from PIL import Image
-import cv2 as cv
 import tempfile
 # import cv2 as cv
 # x = st.slider("Select a value")
@@ -12,12 +11,6 @@ st.title('Video Object Detection')
 
 title = st.text_input('Enter things that need to be detected', '')
 st.write(title)
-
-
-f = st.file_uploader("Upload file")
-tfile = tempfile.NamedTemporaryFile(delete=False)
-tfile.write(f.read())
-vf = cv.VideoCapture(tfile.name)
 
 
 # uploaded_file = st.file_uploader("Choose a file")
