@@ -18,9 +18,13 @@ st.write(title)
 
 # Define a function to read and display videos
 def read_video(video_file):
-    with open(video_file, 'rb') as f:
-        video_bytes = f.read()
+#     with open(video_file, 'rb') as f:
+#         video_bytes = f.read()
+#     st.video(video_bytes)
+    video = open(video_file, 'rb')
+    video_bytes = video_file.read()
     st.video(video_bytes)
+    
 
 # Create a file uploader for videos
 video_file = st.file_uploader("Upload a video", type=["mp4", "avi"])
