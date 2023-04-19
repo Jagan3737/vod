@@ -32,7 +32,7 @@ if uploaded_file is not None:
     
 
 
-image = Image.open(string_data)
+image = Image.open(dataframe)
 
 st.image(image, caption='Sunrise by the mountains')
 
